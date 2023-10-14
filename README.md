@@ -21,6 +21,10 @@ $ git clone git@github.com:RuiOkazaki/dotfiles.git
 ```
 
 ```shell
+$ find . -type f -exec chmod 777 \{\} \;
+```
+
+```shell
 $ cd dotfiles && sh ./global-setup.sh
 ```
 
