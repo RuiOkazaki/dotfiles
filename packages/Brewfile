@@ -28,6 +28,7 @@ brew "tree"
 brew "volta"
 brew "hisasann/ide/ide"
 
+cask "arc"
 cask "visual-studio-code"
 cask "orbstack"
 cask "cmd-eikana"
