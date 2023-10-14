@@ -14,11 +14,6 @@ DESTINATION="$(realpath -m ~/.config/fish)"
 # fish shellの設定を開始することを通知します。
 info "fish shellを設定しています..."
 
-# fishの設定フォルダを作成します。
-substep_info "fishの設定フォルダを作成しています..."
-mkdir -p "$DESTINATION/functions"
-mkdir -p "$DESTINATION/completions"
-
 # *.fishファイルとfish_pluginsを検索し、それらをfishの設定ディレクトリにシンボリックリンクします。
 find * -name "*.fish" -o -name "fish_plugins" | while read fn; do
     symlink "$SOURCE/$fn" "$DESTINATION/$fn"
@@ -53,9 +48,6 @@ set_fish_shell() {
             substep_error "シェルをfishに変更できませんでした"
             return 2
         fi
-        # fishの初期設定を実行します。
-        substep_info "fishの初期設定を実行しています"
-        fish -c "setup"
     fi
 }
 
